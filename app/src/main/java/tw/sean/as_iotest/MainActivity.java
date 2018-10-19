@@ -161,7 +161,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void test6(View view){
-
+        try{
+            File file1 = new File(approot, "brad.txt");
+            FileOutputStream fout =
+                    new FileOutputStream(file1);
+            fout.write("Hello, Brad".getBytes());
+            fout.flush();
+            fout.close();
+            showDialog("OK2","OK2");
+        }catch (Exception e){
+            Log.v("brad","test6:" + e.toString());
+        }
     }
 
     public void test7(View view){
